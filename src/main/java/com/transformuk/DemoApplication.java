@@ -25,7 +25,6 @@ public class DemoApplication {
         public ResponseEntity<String> bootjava8() {
             return ResponseEntity.ok("I'm running on Java 8, honestly...");
         }
-
     }
     
     @Bean

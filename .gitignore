@@ -1,5 +1,1 @@
-*.class
-*.jar
-mvnw
-mvnw.cmd
-target/
+/target/

@@ -1,8 +1,10 @@
 package com.transformuk;
 
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,14 +28,14 @@ public class DemoApplication {
 
     }
     
-//    @Bean
-//    public CommandLineRunner demo(TestDataRepository repo) {
-//    	return (args) -> {
-//            repo.save(new TestData(4, 5));
-//            repo.save(new TestData(6, 7));
-//    		for (TestData td : repo.findAll()) {
-//    			System.out.println("TestData => " + td);
-//    		}
-//    	};
-//    }
+    @Bean
+    public CommandLineRunner demo(TestDataRepository repo) {
+    	return (args) -> {
+            repo.save(new TestData(4, 5));
+            repo.save(new TestData(6, 7));
+    		for (TestData td : repo.findAll()) {
+    			System.out.println("TestData => " + td);
+    		}
+    	};
+    }
 }

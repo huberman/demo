@@ -1,7 +1,7 @@
 mysql:
     image: mysql
     ports:
-        - "13306:3306"
+        - "3306"
     environment:
         MYSQL_ROOT_PASSWORD: wilderbeuasidfjalsdfaisdfast32
         MYSQL_USER: admin
@@ -15,7 +15,7 @@ java-demo:
         - mysql
     environment:
         DBHOST: mysql
-        DBPORT: 13306
+        DBPORT: 3306
         DBNAME: test
         DBPASSWORD: wilderbeuasidfjalsdfaisdfast32
         DBUSER: root

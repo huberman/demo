@@ -23,5 +23,10 @@ public class DemoApplicationTests {
 	public void hamcrestMatchersWork () {
 		assertThat(5, is(1+4));
 	}
+	
+	@Test
+	public void otherStuff() {
+		assertEquals(4, 1+3);
+	}
 
 }

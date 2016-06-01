@@ -23,7 +23,7 @@ public class DemoApplication {
     static class Bootjava8Controller {
         @RequestMapping("/")
         public ResponseEntity<String> bootjava8() {
-            return ResponseEntity.ok("I'm running on Java 8, yippee...");
+            return ResponseEntity.ok("I'm running on Java 8, yeah, yippee...");
         }
     }
     

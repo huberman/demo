@@ -19,5 +19,5 @@ java-demo:
         DBNAME: test
         DBPASSWORD: wilderbeuasidfjalsdfaisdfast32
         DBUSER: root
-    command: /bin/bash -c "sleep 10; java -jar demo.jar"
+    command: /bin/bash -c "sleep 3; java -jar demo.jar"
 

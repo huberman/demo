@@ -1,0 +1,22 @@
+java-demo:
+    image: java-demo
+    ports: 
+        - "8080:8080"
+    links:
+        - mysql
+    environment:
+        DBHOST: ${MYSQL_PORT_3306_TCP_ADDR}
+        DBPORT: ${MYSQL_PORT_3306_TCP_PORT}
+        DBNAME: ${MYSQL_ENV_MYSQL_DATABASE}
+        DBPASSWORD: ${MYSQL_ENV_MYSQL_PASSWORD}
+        DBUSER: ${MYSQL_ENV_MYSQL_USER}
+    command: /bin/bash -c "sleep 3; java -jar demo.jar"
+mysql:
+    image: mysql
+    ports:
+        - "13306:3306"
+    environment:
+        MYSQL_ROOT_PASSWORD: wilderbeuasidfjalsdfaisdfast32
+        MYSQL_USER: admin
+        MYSQL_PASSWORD: admin183nso71oa
+        MYSQL_DATABASE: test

@@ -1,14 +1,9 @@
 package com.transformuk;
 
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 @Configuration
 @EnableAutoConfiguration
@@ -19,22 +14,36 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 	
-    @RestController
-    static class Bootjava8Controller {
-        @RequestMapping("/")
-        public ResponseEntity<String> bootjava8() {
-            return ResponseEntity.ok("I'm running on Java 8, whoop, yay!");
-        }
-    }
-    
-    @Bean
-    public CommandLineRunner demo(TestDataRepository repo) {
-    	return (args) -> {
-            repo.save(new TestData(4, 5));
-            repo.save(new TestData(6, 7));
-    		for (TestData td : repo.findAll()) {
-    			System.out.println("TestData => " + td);
-    		}
-    	};
-    }
+//    @RestController
+//    static class Bootjava8Controller {
+//        @RequestMapping("/")
+//        public String bootjava8() {
+//            return "I'm running on Java 8, whoop, yay!";
+//        }
+//        
+//    	@Autowired
+//    	private TestDataRepository testDataRepo;
+//        
+//    	@RequestMapping("/")
+//        public ResponseEntity<String> test() {
+//        	String output = "";
+//    		for (TestData td : testDataRepo.findAll()) {
+//    			System.out.println("TestData => " + td);
+//    			output += "TestData => " + td + "\n";
+//    		}
+//    		return ResponseEntity.ok(output);    			
+//            //return "I'm running on Java 8, whoop, yay!";
+//        }
+//    }
+//    
+//    @Bean
+//    public CommandLineRunner demo(TestDataRepository repo) {
+//    	return (args) -> {
+//            repo.save(new TestData(4, 5));
+//            repo.save(new TestData(6, 7));
+//    		for (TestData td : repo.findAll()) {
+//    			System.out.println("TestData => " + td);
+//    		}
+//    	};
+//    }
 }

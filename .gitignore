@@ -3,3 +3,4 @@
 *.class
 mvnw
 mvnw.cmd
+*.tar.gz

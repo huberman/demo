@@ -1,4 +1,4 @@
 create table test_data (
-	i integer auto_increment primary key,
+	i integer primary key,
 	j integer
 );

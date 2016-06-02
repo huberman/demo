@@ -8,17 +8,33 @@ import javax.persistence.GenerationType;
 @Entity
 public class TestData {
 	@Id
-        @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.AUTO)
 	private int i;
 	private int j;
 	
-	protected TestData() {}
+	public int getI() {
+		return i;
+	}
+
+	public void setI(int i) {
+		this.i = i;
+	}
+
+	public int getJ() {
+		return j;
+	}
+
+	public void setJ(int j) {
+		this.j = j;
+	}
+	
+	protected TestData() {}		// needed by JPA
 	
 	public TestData(int i, int j) {
-            this.i = i;
-            this.j = j;
-        }
-	
+		this.i = i;
+		this.j = j;
+	}
+
 	@Override
 	public String toString() {
 		return "i = " + i + ", j = " + j;

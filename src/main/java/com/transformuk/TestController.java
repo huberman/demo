@@ -12,7 +12,6 @@ public class TestController {
 
 	@RequestMapping("/")
 	public ResponseEntity<String> test() {
-		testDataRepo.save(new TestData(0, 10));		// 0 will be replaced by auto_increment PK
 		String output = "<html><body><pre>test_data contains:\n";
 		output += "=====================\n";
 		for (TestData td : testDataRepo.findAll()) {

@@ -1,4 +1,9 @@
+@Sprint2
 Feature: check Cucumber works
+
+  Background: lots of interesting explanation about this feature and its
+    various associated scenarios
+
 
   Scenario: foo
     Given something

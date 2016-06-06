@@ -10,14 +10,14 @@ public class TestController {
 	@Autowired
 	private TestDataRepository testDataRepo;
 
-	@RequestMapping("/dump")
+	@RequestMapping("/")
 	public ResponseEntity<String> test() {
 		String output = "<html><body><pre>test_data contains:\n";
 		output += "=====================\n";
 		for (TestData td : testDataRepo.findAll()) {
 			output += "  " + td + "\n";
 		}
-		output += "=====================\n</pre></body></html>";
+		output += "=====================\n</pre></body></html>\n";
 		return ResponseEntity.ok(output);
 	}
 }

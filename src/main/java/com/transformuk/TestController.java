@@ -12,7 +12,7 @@ public class TestController {
 
 	@RequestMapping("/")
 	public ResponseEntity<String> test() {
-		String output = "<html><body><pre>test_data contains:\n";
+		String output = "<html><body><pre>Hello world\ntest_data contains:\n";
 		output += "=====================\n";
 		for (TestData td : testDataRepo.findAll()) {
 			output += "  " + td + "\n";

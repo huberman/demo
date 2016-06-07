@@ -9,9 +9,10 @@ public class DBConnectionKeepAlive {
 	@Autowired
 	private TestDataRepository testDataRepo;
 	
-	@Scheduled(fixedRate=1000)
+	@Scheduled(fixedRate=60*60*1000)
 	public void addToDB() {
-		testDataRepo.save(new TestData(0, 999));		
+		@SuppressWarnings("unused")
+		long count = testDataRepo.count();
 	}
 
 }

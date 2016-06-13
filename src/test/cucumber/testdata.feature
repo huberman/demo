@@ -10,7 +10,7 @@ Feature: check Cucumber works
     When something else
     Then amazing
 
-  #@Ignore
+  @Ignore
   Scenario: wibble
     Given something
     When something bad happens
